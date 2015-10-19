@@ -8,7 +8,7 @@ case class UpdateThreshold(threshold: DateTime)
 
 class ContentPollService(contentSource: ContentSource)(implicit val system: ActorSystem) {
   implicit val ec = system.dispatcher
-  val stuff = new ContentPollFetcher(contentSource, new ContentPublisher(eventsEndpoint, accessKey))
+  val stuff = new ContentPollFetcher(contentSource, new EventPublisher(eventsEndpoint, accessKey))
   val actor = system.actorOf(Props(new ContentPollActor(stuff.fetchContentUnit)))
 
   def start() = actor ! StartPolling

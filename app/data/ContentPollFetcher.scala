@@ -8,7 +8,7 @@ import scala.util.{Failure, Success}
 import scalaz.\/
 import scalaz.syntax.either._
 
-class ContentPollFetcher(contentSource: ContentSource, publisher: ContentPublisher)(implicit ec: ExecutionContext) {
+class ContentPollFetcher(contentSource: ContentSource, publisher: EventPublisher)(implicit ec: ExecutionContext) {
 
   private def logResults(ls: List[PublisherApiError \/ ArticleEventResponse]) = {
     val (failures, successes) = (ls.count(_.isLeft), ls.count(_.isRight))

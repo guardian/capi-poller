@@ -8,7 +8,7 @@ import scalaz.\/
 import scalaz.syntax.either._
 import play.api.Play.current
 
-class ContentPublisher(endpoint: String, accessKey: String) {
+class EventPublisher(endpoint: String, accessKey: String) {
 
   def publishEvent(event: ArticleEvent)(implicit ec: ExecutionContext): Future[PublisherApiError \/ ArticleEventResponse] = {
     WS.url(endpoint)
