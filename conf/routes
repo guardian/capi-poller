@@ -1,0 +1,4 @@
+# Routes
+
+GET     /                           controllers.Application.healthCheck
+
