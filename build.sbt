@@ -22,6 +22,5 @@ libraryDependencies ++= Seq(
   "org.scalaz" %% "scalaz-core" % "7.1.0",
   ws,
   specs2 % Test
-)     
-
+)
 routesGenerator := InjectedRoutesGenerator
