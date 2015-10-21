@@ -31,7 +31,7 @@ file = /$apptag-1.0-SNAPSHOT/gc.log.0
 buffer_duration = 5000
 log_stream_name = $apptag-$stagetag-$instanceid-GC
 initial_position = start_of_file
-log_group_name = mobile-apps-api-$apptag-$stagetag-GC
+log_group_name = mobile-prediction-io-$apptag-$stagetag-GC
 __END__
 
 wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
