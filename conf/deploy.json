@@ -1,7 +1,7 @@
 {
   "defaultStacks": ["mobile-prediction-io"],
   "packages": {
-    "mobile-distributor": {
+    "capi-poller": {
       "type": "autoscaling",
       "data": {
         "secondsToWait": 900,
