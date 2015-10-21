@@ -2,7 +2,7 @@ name := """capi-poller"""
 
 version := "1.0-SNAPSHOT"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
 resolvers += "Scalaz Bintray Repo" at "https://dl.bintray.com/scalaz/releases"
 
