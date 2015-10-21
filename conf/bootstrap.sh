@@ -10,7 +10,7 @@ stagetag=`aws ec2 describe-tags --filters "Name=resource-id,Values=$instanceid" 
 loggingrole=`aws ec2 describe-tags --filters "Name=resource-id,Values=$instanceid" "Name=resource-type,Values=instance" "Name=key,Values=LoggingRole" --region $region | grep -oP "(?<=\"Value\": \")[^\"]+"`
 loggingstream=`aws ec2 describe-tags --filters "Name=resource-id,Values=$instanceid" "Name=resource-type,Values=instance" "Name=key,Values=LoggingStream" --region $region | grep -oP "(?<=\"Value\": \")[^\"]+"`
 
-log_group_name="capi-poller-$apptag-$stagetag"
+log_group_name="mobile-prediction-io-$apptag-$stagetag"
 
 filter_pattern="[..., type=REQUEST, remoteAddr, method, uri, took=took, time, ms=ms, and=and, returned=returned, statusCode]"
 
@@ -37,16 +37,16 @@ __END__
 wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
 python ./awslogs-agent-setup.py -n -r $region -c awslogs.conf
 
-aws s3 cp s3://mobile-apps-api-dist/$stagetag/mobile-apps-api/mobile-apps-api.$stacktag.properties /etc/gu/mobile-apps-api.properties
+aws s3 cp s3://mobile-apps-api-dist/$stagetag/mobile-apps-api/capi-poller.properties /etc/gu/capi-poller.properties
 aws s3 cp s3://mobile-apps-api-dist/mobile.conf /etc/init/$apptag.conf
 sed -i "s/<APP>/$apptag/g" /etc/init/$apptag.conf
 
-start mobile-fronts
+start capi-poller
 
 tmpfile=/tmp/filters.$$
 
 aws logs describe-subscription-filters \
-    --log-group-name mobile-apps-api-$apptag-$stagetag \
+    --log-group-name capi-poller-$apptag-$stagetag \
     --region eu-west-1 \
     --filter-name-prefix "cwl-es-" > $tmpfile
 

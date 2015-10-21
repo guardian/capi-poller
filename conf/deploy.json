@@ -8,7 +8,7 @@
         "port": 9000,
         "healthcheckGrace": 20,
         "warmupGrace": 30,
-        "bucket": "mobile-apps-api-dist",
+        "bucket": "prediction-io-dist",
         "healthcheck_paths": ["/"],
         "publicReadAcl": false
       }
