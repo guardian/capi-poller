@@ -37,7 +37,7 @@ __END__
 wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
 python ./awslogs-agent-setup.py -n -r $region -c awslogs.conf
 
-aws s3 cp s3://mobile-apps-api-dist/$stagetag/mobile-apps-api/capi-poller.properties /etc/gu/capi-poller.properties
+aws s3 cp s3://prediction-io-dist/capi-poller/capi-poller.properties /etc/gu/capi-poller.properties
 aws s3 cp s3://mobile-apps-api-dist/mobile.conf /etc/init/$apptag.conf
 sed -i "s/<APP>/$apptag/g" /etc/init/$apptag.conf
 
