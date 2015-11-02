@@ -13,7 +13,7 @@ class ArticleEventTest extends Specification {
 
   val articleEvent = new ArticleEvent(
     entityId = "my-guardian-article",
-    properties = Map("section" -> referenceSection),
+    properties = Map("categories" -> List(referenceSection)),
     eventTime = referenceDate
   )
   val content = Content(
