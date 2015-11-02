@@ -20,7 +20,7 @@ object ArticleEvent {
 }
 case class ArticleEvent(
   event: String = "$set",
-  entityType: String = "article",
+  entityType: String = "item",
   entityId: String,
   properties: Map[String, String],
   eventTime: DateTime
