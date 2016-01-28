@@ -17,7 +17,7 @@ addCommandAlias("dist", ";riffRaffArtifact")
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.3.4",
   "com.typesafe.akka" %% "akka-agent" % "2.3.4",
-  "com.gu" %% "content-api-client" % "7.1",
+  "com.gu" %% "content-api-client" % "7.10",
   "com.gu" %% "configuration" % "4.0",
   "org.scalaz" %% "scalaz-core" % "7.1.0",
   ws,
