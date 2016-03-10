@@ -5,6 +5,7 @@ version := "1.0-SNAPSHOT"
 scalaVersion := "2.11.7"
 
 resolvers += "Scalaz Bintray Repo" at "https://dl.bintray.com/scalaz/releases"
+resolvers += "Guardian GitHub Repository" at "http://guardian.github.com/maven/repo-releases"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala, RiffRaffArtifact, JavaAppPackaging)
 
